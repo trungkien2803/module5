@@ -7,15 +7,13 @@ import {Calculation} from '../calculation';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  calculation: Calculation = {
-    number: '0',
-  };
+  number: '0';
   constructor() { }
 
   ngOnInit() {
   }
   result(){
     // tslint:disable-next-line:no-eval
-    return eval(this.calculation.number);
+    return eval(this.number);
   }
 }
