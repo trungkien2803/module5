@@ -1,17 +1,23 @@
-
+<button (click)="showFormCreate()">Create Product</button>
+<app-create-product *ngIf="formCreate" (addProduct)="createProduct($event)"></app-create-product>
+<app-edit-product *ngIf="formEdit" [product]="products[productCurrentIndex]"></app-edit-product>
 <table class="table">
   <thead class="table-primary">
   <tr>
     <th>ID</th>
     <th>Name</th>
     <th>Price</th>
+    <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let product of products; index as i">
-    <td>{{i+ 1}}</td>
+    <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
+    <td><button (click)="showFormEdit(i)">Edit</button></td>
+    <td><button (click)="deleteProduct(i)">Delete</button></td>
   </tr>
   </tbody>
 </table>

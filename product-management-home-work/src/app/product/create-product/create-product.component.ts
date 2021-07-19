@@ -7,12 +7,9 @@ import {Product} from '../product';
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent implements OnInit {
-  @Input() products: Product[] = [];
-  @Output() addProduct = new EventEmitter<Product[]>();
-
+  @Output() addProduct = new EventEmitter<Product>();
   createProduct(value) {
-    this.products.push(value);
-    this.addProduct.emit(this.products);
+    this.addProduct.emit(value);
   }
 
   constructor() {

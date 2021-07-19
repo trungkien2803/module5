@@ -7,12 +7,15 @@ import { ListProductComponent } from './product/list-product/list-product.compon
 import { CreateProductComponent } from './product/create-product/create-product.component';
 import {NgbButtonsModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListProductComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,
